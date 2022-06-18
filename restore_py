@@ -1,0 +1,106 @@
+import random
+import time
+labels = ['rock', 'paper', 'scissors']
+num_rounds = 0
+player_score = 0
+computer_score = 0
+countdown = 0
+while True:  
+    computer = random.choice(labels)
+    player = input("Enter your choice (rock, paper, scissors): ").lower()
+               
+    if player == 'rock':
+        if computer == 'paper':
+            print(computer, '\nYou LOSE!')
+            computer_score += 1
+            num_rounds += 1
+            print(f'Computer score is: ', computer_score)
+            print(f'Number of rounds: ', num_rounds)
+            print('Your current score is: ', player_score)
+        if computer == 'scissors':
+            print(computer, '\nYou WIN!')
+            player_score += 1
+            num_rounds += 1
+            print(f'Computer score is: ', computer_score)
+            print(f'Number of rounds: ', num_rounds)
+            print('Your current score is: ', player_score)
+        elif player == computer:
+            print(computer, '\nIts a TIE!')
+    
+    elif player == 'paper':
+        if computer == 'rock':
+            print(computer, '\nYou WIN!')
+            player_score += 1
+            num_rounds += 1
+            print(f'Computer score is: ', computer_score)
+            print(f'Number of rounds: ', num_rounds)
+            print('Your current score is: ', player_score)
+        if computer == 'scissors':
+            print(computer, '\nYou LOSE!')
+            computer_score += 1
+            num_rounds += 1
+            print(f'Computer score is: ', computer_score)
+            print(f'Number of rounds: ', num_rounds)
+            print('Your current score is: ', player_score)
+        elif player == computer:
+            print(computer, '\nIts a TIE!')
+    
+    elif player == 'scissors':
+        if computer == 'paper':
+            print(computer, '\nYou WIN!')
+            player_score += 1
+            num_rounds += 1
+            print(f'Computer score is: ', computer_score)
+            print(f'Number of rounds: ', num_rounds)
+            print('Your current score is: ', player_score)
+        if computer == 'rock':
+            print(computer, '\nYou Lose!')
+            computer_score += 1
+            num_rounds += 1
+            print(f'Computer score is: ', computer_score)
+            print(f'Number of rounds: ', num_rounds)
+            print('Your current score is: ', player_score)
+        elif player == computer:
+            print(computer, '\nIts a TIE!')
+    else:
+        print('Please select one among the list below: \nrock \npaper \nscissors')
+    
+   
+    if player_score == 3:
+        winner = player  
+        countdown = 5
+        for x in range(5):
+            countdown -= 1
+            print('Guessing...')
+            time.sleep(5)
+            print(f'Computer Picked: ',computer)   
+            print('You are the WINNER!!')  
+            play_again = input("Play again? (y/n): ")
+            num_rounds = 0
+            player_score = 0
+            computer_score = 0
+            if play_again != "y":
+                print("See you again ! BYE!!")
+            break
+             
+                
+    if computer_score == 3:
+        winner = computer    
+        print('Guessing...')
+        time.sleep(5)
+        print(f'Computer Picked: ',computer)
+        print ('Computer is the WINNER!!')
+        play_again = input("Play again? (y/n): ")
+        num_rounds = 0
+        player_score = 0
+        computer_score = 0
+        if play_again != "y":
+            print("See you again ! BYE!!")
+        break
+    
+    
+       
+    
+
+    
+        
